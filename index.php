@@ -15,6 +15,7 @@ if (file_exists($itemsFile)) {
   <meta charset="UTF-8">
   <title>Scanbooks - Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -23,14 +24,14 @@ if (file_exists($itemsFile)) {
   <?php if (empty($items)): ?>
     <p>No items scanned yet.</p>
   <?php else: ?>
-    <ul class="list-group">
     <?php foreach ($items as $item): ?>
-      <li class="list-group-item">
-        <strong><?= htmlspecialchars($item['title'] ?? 'Unknown'); ?></strong><br>
-        ISBN: <?= htmlspecialchars($item['isbn']); ?>
-      </li>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title mb-1"><?= htmlspecialchars($item['title'] ?? 'Unknown'); ?></h5>
+          <p class="card-text mb-0">ISBN: <?= htmlspecialchars($item['isbn']); ?></p>
+        </div>
+      </div>
     <?php endforeach; ?>
-    </ul>
   <?php endif; ?>
 </div>
 <?php include 'navbar.php'; ?>
