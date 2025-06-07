@@ -33,5 +33,6 @@ h1 {
 #scanner {
     border: 2px dashed #ccc;
     border-radius: .5rem;
-    height: 300px;
+    width: 100%;
+    aspect-ratio: 4 / 3;
 }
